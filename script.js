@@ -30,7 +30,7 @@ function markAsCompleted(button) {
     completeButton.innerHTML = 'Remove';
     completeButton.onclick = function () {
         taskItem.remove();
-        // You can add more logic here to mark the task as completed in your system.
+        
     };
 }
 
@@ -39,11 +39,11 @@ function isValidDate(date) {
 }
 
 function scheduleNotification(taskText, dueDate) {
-    const now = new Date();
-    const timeUntilDeadline = dueDate - now;
+const now = new Date();
+const timeUntilDeadline = dueDate - now;
 
-    if (timeUntilDeadline > 0) {
-        setTimeout(() => {
+if (timeUntilDeadline > 0) {
+setTimeout(() => {
             const notification = new Notification('Task Reminder', {
                 body: `Task "${taskText}" is due now!`,
             });
@@ -53,7 +53,7 @@ function scheduleNotification(taskText, dueDate) {
                 alert(`Task "${taskText}" is due now!`);
             };
         }, timeUntilDeadline);
-    }
+}
 }
 
 // Request notification permission
